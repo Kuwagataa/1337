@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:57:47 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/10 19:15:54 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/19 20:39:20 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	while (i >= 0)
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 		{
 			return ((char *)&s[i]);
 		}

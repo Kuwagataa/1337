@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:53:35 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/15 19:45:07 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/19 19:02:59 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,11 @@ static int	ft_numlen(int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_conv(char *s, int n, int len)
 {
-	int		neg;
-	int		len;
-	int		truelen;
-	char	*s;
+	int	neg;
 
 	neg = 0;
-	len = ft_numlen(n);
-	truelen = ft_numlen(n);
-	s = malloc(len + 1);
-	if (!s)
-		return (NULL);
 	if (n < 0)
 	{
 		n *= -1;
@@ -55,6 +47,21 @@ char	*ft_itoa(int n)
 	}
 	if (neg)
 		s[0] = '-';
-	s[truelen] = '\0';
+	return (s);
+}
+
+char	*ft_itoa(int n)
+{
+	int		len;
+	char	*s;
+
+	len = ft_numlen(n);
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	s = malloc(len + 1);
+	if (!s)
+		return (NULL);
+	s = ft_conv(s, n, len);
+	s[len] = '\0';
 	return (s);
 }

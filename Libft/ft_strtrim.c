@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:06:53 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/14 17:30:41 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/19 16:49:29 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,20 +30,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trimmed;
 	size_t	trimlen;
-	size_t	i;
 
-	i = 0;
-	if (!s1)
+	if (!s1 || !set)
 		return (NULL);
-	while (s1[i] && ft_isset(s1[i], set) == 1)
-		i++;
+	while (s1 && ft_isset(*s1, set) == 1)
+		s1++;
 	trimlen = ft_strlen(s1);
-	while (ft_isset(s1[trimlen - 1], set) == 1)
+	while (ft_isset(s1[trimlen - 1], set) == 1 && trimlen != 0)
 		trimlen--;
-	trimlen -= i;
 	trimmed = malloc(trimlen + 1);
 	if (!trimmed)
 		return (NULL);
-	ft_strlcpy(trimmed, &s1[i], trimlen + 1);
+	ft_strlcpy(trimmed, (char *)s1, trimlen + 1);
 	return (trimmed);
 }

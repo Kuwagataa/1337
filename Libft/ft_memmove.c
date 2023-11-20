@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:16:45 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/12 19:14:36 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/19 19:54:06 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	int	i;
 
-	if (!dst || !src)
-		return (NULL);
+	if (!dst && !src && len)
+		return (dst);
+	if (!len)
+		return (dst);
 	if (dst > src)
 	{
 		i = len - 1;
