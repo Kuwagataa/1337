@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 18:39:35 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/20 16:18:51 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:29:10 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static char	**ft_split_words(char const *s, char c, char **words)
 			i++;
 			wordlen++;
 		}
-		words[word] = (char *)malloc(sizeof(char) * (wordlen + 1));
+		words[word] = malloc(wordlen + 1);
 		if (!words)
 			return (NULL);
 		ft_word(words[word], s, i, wordlen);
@@ -80,10 +80,10 @@ char	**ft_split(char const *s, char c)
 	char			**words;
 
 	if (!s)
-		return (0);
-	words = (char **)malloc(sizeof(char *) * ((ft_wordcount(s, c)) + 1));
+		return (NULL);
+	words = malloc(sizeof(char *) * ((ft_wordcount(s, c)) + 1));
 	if (!words)
-		return (0);
+		return (NULL);
 	words = ft_split_words(s, c, words);
 	return (words);
 }

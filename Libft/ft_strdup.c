@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 17:36:19 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/07 17:46:10 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/20 18:36:38 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 	char	*dest;
 
 	i = ft_strlen(s1);
-	dest = (char *)malloc((sizeof(char) * i) + 1);
+	dest = malloc(i + 1);
 	if (!dest)
 		return (NULL);
 	i = 0;
