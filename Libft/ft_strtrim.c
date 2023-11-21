@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:06:53 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/19 16:49:29 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/21 18:25:50 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	ft_isset(char const c, char const *set)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (set[i] != '\0')

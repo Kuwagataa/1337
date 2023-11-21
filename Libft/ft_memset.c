@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 17:15:12 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/10 16:46:47 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/21 16:39:07 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memset(void *b, int c, size_t len)
 	dest = b;
 	while (i < len)
 	{
-		dest[i] = c;
+		dest[i] = (unsigned char)c;
 		i++;
 	}
 	return (b);

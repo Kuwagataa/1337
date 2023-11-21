@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 15:53:35 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/19 19:02:59 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/21 18:22:21 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 static int	ft_numlen(int n)
 {
-	int	i;
+	int	len;
 
-	i = 0;
+	len = 0;
 	if (n <= 0)
 	{
 		n *= -1;
-		i++;
+		len++;
 	}
 	while (n > 0)
 	{
-		i++;
+		len++;
 		n /= 10;
 	}
-	return (i);
+	return (len);
 }
 
 static char	*ft_conv(char *s, int n, int len)

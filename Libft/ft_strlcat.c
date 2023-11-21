@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 17:28:18 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/10 16:53:09 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/21 16:38:11 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	lend = ft_strlen(dst);
 	i = 0;
 	j = lend;
-	if (dstsize == 0 || dstsize <= lend)
+	if (dstsize <= lend)
 	{
 		return (lens + dstsize);
 	}
