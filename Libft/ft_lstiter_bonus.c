@@ -1,42 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 18:16:45 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/23 19:04:54 by hes-safi         ###   ########.fr       */
+/*   Created: 2023/11/22 18:16:39 by hes-safi          #+#    #+#             */
+/*   Updated: 2023/11/23 15:48:41 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	i;
-
-	if (!dst && !src && len)
-		return (dst);
-	if (!len)
-		return (dst);
-	if (dst > src)
+	if (!lst || !f)
+		return ;
+	while (lst)
 	{
-		i = len - 1;
-		while (i >= 0)
-		{
-			((char *)dst)[i] = ((char *)src)[i];
-			i--;
-		}
+		(*f)(lst->content);
+		lst = lst->next;
 	}
-	else
-	{
-		i = 0;
-		while (i < (int)len)
-		{
-			((char *)dst)[i] = ((char *)src)[i];
-			i++;
-		}
-	}
-	return (dst);
 }
