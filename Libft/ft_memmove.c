@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 18:16:45 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/23 19:04:54 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/24 18:41:24 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	int	i;
 
-	if (!dst && !src && len)
-		return (dst);
-	if (!len)
-		return (dst);
 	if (dst > src)
 	{
 		i = len - 1;
@@ -29,7 +25,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			i--;
 		}
 	}
-	else
+	else if (src > dst)
 	{
 		i = 0;
 		while (i < (int)len)
