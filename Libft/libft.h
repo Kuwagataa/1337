@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 16:31:25 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/24 19:37:27 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/24 20:33:14 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdint.h>
+# include <stdio.h>
 
 /************************** Part 1 - Libc Functions **************************/
 
