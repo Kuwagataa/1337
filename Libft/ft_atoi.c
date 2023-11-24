@@ -6,17 +6,26 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 16:30:19 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/07 13:37:53 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/24 22:34:05 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_limits(size_t num, int sign)
+{
+	if (sign == 1)
+		return (-1);
+	else if (sign == -1 && num == 9223372036854775807)
+		return (1);
+	return (0);
+}
+
 int	ft_atoi(const char *str)
 {
 	size_t	i;
 	int		posneg;
-	int		toreturn;
+	size_t	toreturn;
 
 	i = 0;
 	posneg = 1;
@@ -25,9 +34,8 @@ int	ft_atoi(const char *str)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[i] == '-')
+		if (str[i++] == '-')
 			posneg = -1;
-		i++;
 	}
 	while (str[i] != '\0' && ft_isdigit(str[i]))
 	{
@@ -35,6 +43,7 @@ int	ft_atoi(const char *str)
 		toreturn += str[i] - 48;
 		i++;
 	}
-	toreturn *= posneg;
-	return (toreturn);
+	if (toreturn >= 9223372036854775807)
+		return (ft_limits(toreturn, posneg));
+	return ((int)toreturn * posneg);
 }
