@@ -6,7 +6,7 @@
 #    By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/24 15:43:15 by hes-safi          #+#    #+#              #
-#    Updated: 2023/11/24 19:40:23 by hes-safi         ###   ########.fr        #
+#    Updated: 2023/11/25 18:18:54 by hes-safi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,10 +31,10 @@ CC			=	cc
 all:			${NAME}
 
 ${NAME}:		${OBJS}
-					${ARCH} ${NAME} ${OBJS}
 
 ${OBJS}:		${SRCS}
 					${CC} ${CFLAGS} -c ${SRCS}
+					${ARCH} ${NAME} ${OBJS}
 
 bonus:			${BOBJS}
 
