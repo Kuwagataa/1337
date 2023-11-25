@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:27:25 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/23 19:36:28 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/25 22:13:31 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*nextnode;
 
-	if (!*lst || !del)
+	if (!lst || !del || !*lst)
 		return ;
 	while (*lst)
 	{
