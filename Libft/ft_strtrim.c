@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:06:53 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/11/21 18:25:50 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/11/26 20:52:16 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_isset(char const c, char const *set)
 	size_t	i;
 
 	i = 0;
-	while (set[i] != '\0')
+	while (set && set[i] != '\0')
 	{
 		if (set[i] == c)
 			return (1);
@@ -31,7 +31,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*trimmed;
 	size_t	trimlen;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
 	while (s1 && ft_isset(*s1, set) == 1)
 		s1++;
