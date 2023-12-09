@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 14:21:50 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/12/08 17:17:07 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/12/09 20:04:45 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	parsing(const char *format, int i, int len, va_list args)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i++] == 0)
+			if (format[++i] == 0)
 				return (len);
 			temp = handling(format[i], args, 0);
 			if (temp < 0)
