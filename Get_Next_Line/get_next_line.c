@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:39:55 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/12/19 23:23:18 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/12/20 17:30:23 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static char	*parse(int fd, char *cursor, int scan)
 	buffer = malloc((size_t)BUFFER_SIZE + 1);
 	if (!buffer)
 		return (NULL);
-	while (scan != 0 && !ft_isnl(cursor))
+	while (scan != 0 && !ft_findnl(cursor))
 	{
 		scan = read(fd, buffer, BUFFER_SIZE);
 		if (scan == -1 || (scan == 0 && (!cursor || !cursor[0])))
@@ -93,7 +93,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*cursor;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE >= SIZE_MAX)
 		return (NULL);
 	cursor = parse(fd, cursor, 1);
 	if (!cursor)

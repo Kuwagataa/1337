@@ -6,7 +6,7 @@
 /*   By: hes-safi <hes-safi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 16:40:03 by hes-safi          #+#    #+#             */
-/*   Updated: 2023/12/19 23:23:50 by hes-safi         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:10:27 by hes-safi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-int	ft_isnl(char *s)
+int	ft_findnl(char *s)
 {
 	size_t	i;
 
